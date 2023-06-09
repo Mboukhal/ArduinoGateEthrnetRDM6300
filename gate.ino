@@ -1,5 +1,7 @@
 #include "rfid.hpp"
 #include "request.hpp"
+#include "sd_cart.hpp"
+
 
 void setup() {
 
@@ -18,18 +20,12 @@ void setup() {
   Serial.println("INIT DONE!");
 }
 
-
-void loop() {
-  if (ssrfid.available() > 0 ) {
-    getId();
-  }
-}
-
 bool call_extract_tag = false;
 int ssvalue = 0; // read 
 
-void getId() {
-
+void loop() {
+  if (ssrfid.available() > 0 ) {
+    
     call_extract_tag = false; 
     ssvalue = ssrfid.read();  // read 
     if (ssvalue == -1) {
@@ -56,7 +52,7 @@ void getId() {
         Serial.println(id);
         gate(id);
         while (ssrfid.available() > 0) {
-          ssvalue = ssrfid.read(); // read 
+          ssrfid.read(); // read 
         }
       } else {
         // something is wrong... start again looking for preamble (value: 2)
@@ -64,4 +60,10 @@ void getId() {
         return;
       }
     }  
+  }
+}
+
+
+void getId() {
+
 }

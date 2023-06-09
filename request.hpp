@@ -7,9 +7,12 @@
 extern const byte MAC[6];
 
 // Define the endpoint and token
-extern char* endpoint;
+extern String ENDPOINT;
+extern String TOKEN;
+
+extern String hostname;
+extern String uri;
 extern int port;
-extern char* token;
 
 #define RELAY 7
 

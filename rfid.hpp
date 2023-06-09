@@ -19,7 +19,6 @@ extern int buffer_index;
 
 #define INTERRAPT 2
 
-// extern String id;
 
 void rfidInit();
 

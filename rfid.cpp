@@ -13,7 +13,7 @@ void rfidInit() {
   ssrfid.begin(9600);
   ssrfid.listen(); 
 }
-
+ 
 String extract_tag(uint8_t *buff) {
 
     String id;
