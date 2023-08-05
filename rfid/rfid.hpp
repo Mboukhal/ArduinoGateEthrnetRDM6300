@@ -26,6 +26,7 @@ class rfid {
     
 
   public:
+    rfid();
     rfid(int RX, int TX);
     void init(void);
     bool waitForCart();

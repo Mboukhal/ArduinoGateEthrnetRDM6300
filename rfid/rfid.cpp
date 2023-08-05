@@ -1,5 +1,9 @@
 #include "rfid.hpp"
 
+rfid::rfid()
+: ssrfid(8, -1) {}
+
+
 rfid::rfid(int RX, int TX)
 : ssrfid(RX, TX) {}
 
@@ -37,7 +41,6 @@ void rfid::hexToDecimalString(char *str, unsigned int length) {
     id = "0" + id;
   }
   ssrfid.println(id);
-  Serial.println(id);
 }
 
 bool rfid::waitForCart(void) {
